@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aeterna</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('@AppBundle/Resources/public/css/style.css') }}">
+    {% endblock %}
+</head>
+<body>
+{% include '@App/Common/header.html.twig' %}
+{% block body %}{% endblock %}
+{% include '@App/Common/footer.html.twig' %}
+</body>
+
+{% javascripts
+'@AppBundle/Resources/public/Js/jquery-3.2.1.js'
+'@AppBundle/Resources/public/Js/header.js'
+'@AppBundle/Resources/public/Js/footer.js'
+
+output='js/compiled/app.js' %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+</html>
