@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>Aeterna</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('@AppBundle/Resources/public/css/style.css') }}">
+        {% stylesheets '@AppBundle/Resources/public/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
     {% endblock %}
+
 </head>
 <body>
 {% include '@App/Common/header.html.twig' %}
